@@ -1,0 +1,1507 @@
+<?xml version="1.0"?>
+<doc>
+    <application>
+        <id>437dbf0e-84ff-417a-965d-ed2bb9650972</id>
+        <name>Base Application</name>
+        <publisher>Microsoft</publisher>
+        <version>20.4.44313.44365</version>
+    </application>
+    <members>
+        <member name="O:Table::CSV Buffer">
+            <summary>
+            Table to store CSV (comma-separated values).
+            </summary>
+        </member>
+        <member name="M:Table::CSV Buffer.InsertEntry(Integer,Integer,Text[250])">
+            <summary>
+            Inserts an entry to the record.
+            </summary>
+            <param name="LineNo">The line number on which to insert the value.</param>
+            <param name="FieldNo">The field number (or position) on which to insert the value.</param>
+            <param name="FieldValue">The value to insert.</param>
+        </member>
+        <member name="M:Table::CSV Buffer.LoadData(Text,Text[1],Text)">
+            <summary>
+            Loads data from a file.
+            </summary>
+            <remark>
+            Reads the content of the file by lines and separate values using <paramref name="CSVFieldSeparator"/>.
+            All the characters in <paramref name="CSVCharactersToTrim"/> will be removed from the beginning and the end of the read values.
+            </remark>
+            <param name="CSVFileName">The name of the file from which to laod data.</param>
+            <param name="CSVFieldSeparator">The separator to use to split the values.</param>
+            <param name="CSVCharactersToTrim">Characters to trim from the beginning and the end of the read values.</param>
+        </member>
+        <member name="M:Table::CSV Buffer.LoadData(Text,Text[1])">
+            <summary>
+            Loads data from a file.
+            </summary>
+            <remark>
+            Reads the content of the file by lines and separate values using <paramref name="CSVFieldSeparator"/>.
+            </remark>
+            <param name="CSVFileName">The name of the file from which to load data.</param>
+            <param name="CSVFieldSeparator">The character to use to split the values.</param>
+        </member>
+        <member name="M:Table::CSV Buffer.LoadDataFromStream(InStream,Text[1],Text)">
+            <summary>
+            Loads data from a stream.
+            </summary>
+            <remark>
+            Reads the content of the stream by lines and separate values using <paramref name="CSVFieldSeparator"/>.
+            All the characters in <paramref name="CSVCharactersToTrim"/> will be omitted from the read values.
+            </remark>
+            <param name="CSVInStream">The stream from which to laod data.</param>
+            <param name="CSVFieldSeparator">The character to use to split the values.</param>
+            <param name="CSVCharactersToTrim">Characters to trim from the beginning and the end of the read values.</param>
+        </member>
+        <member name="M:Table::CSV Buffer.LoadDataFromStream(InStream,Text[1])">
+            <summary>
+            Loads data from a stream.
+            </summary>
+            <remark>
+            Reads the content of the stream by lines and separate values using <paramref name="CSVFieldSeparator"/>.
+            </remark>
+            <param name="CSVInStream">The stream from which to laod data.</param>
+            <param name="CSVFieldSeparator">The character to use to split the values.</param>
+        </member>
+        <member name="M:Table::CSV Buffer.SaveData(Text,Text[1])">
+            <summary>
+            Saves the data stored in the record to a file.
+            </summary>
+            <param name="CSVFileName">The name of the output file.</param>
+            <param name="CSVFieldSeparator">The character to use as separator.</param>
+        </member>
+        <member name="M:Table::CSV Buffer.SaveDataToBlob(Codeunit::Temp Blob@,Text[1])">
+            <summary>
+            Saves the data stored in the record to a BLOB.
+            </summary>
+            <param name="TempBlob">The BLOB in which to save the data.</param>
+            <param name="CSVFieldSeparator">The character to use as separator.</param>
+        </member>
+        <member name="M:Table::CSV Buffer.InitializeReader(Text,Text[1])">
+            <summary>
+            Initializes the CSV buffer.
+            </summary>
+            <remarks>
+            No data is inserted into the buffer.
+            </remarks>
+            <param name="CSVFileName">The name of the file from which to read data.</param>
+            <param name="CSVFieldSeparator">The character to use to split the values.</param>
+        </member>
+        <member name="M:Table::CSV Buffer.InitializeReader(Text,Text[1],Text)">
+            <summary>
+            Initializes the CSV buffer.
+            </summary>
+            <remarks>
+            No data is inserted into the buffer.
+            </remarks>
+            <param name="CSVFileName">The name of the file from which to read data.</param>
+            <param name="CSVFieldSeparator">The character to use to split the values.</param>
+            <param name="CSVCharactersToTrim">Characters to trim from the beginning and the end of the read values.</param>
+        </member>
+        <member name="M:Table::CSV Buffer.InitializeReader(Text,Text[1],Text,.System#Text#Encoding)">
+            <summary>
+            Initializes the CSV buffer.
+            </summary>
+            <remarks>
+            No data is inserted into the buffer.
+            </remarks>
+            <param name="CSVFileName">The name of the file from which to read data.</param>
+            <param name="CSVFieldSeparator">The character to use to split the values.</param>
+            <param name="CSVCharactersToTrim">Characters to trim from the beginning and the end of the read values.</param>
+            <param name="Encoding">The character encoding to use.</param>
+        </member>
+        <member name="M:Table::CSV Buffer.InitializeReaderFromStream(InStream,Text[1],Text)">
+            <summary>
+            Initializes the CSV buffer.
+            </summary>
+            <remarks>
+            No data is inserted into the buffer.
+            </remarks>
+            <param name="CSVInStream">The stream from which to read data.</param>
+            <param name="CSVFieldSeparator">The character to use to split the values.</param>
+            <param name="CSVCharactersToTrim">Characters to trim from the beginning and the end of the read values.</param>
+        </member>
+        <member name="M:Table::CSV Buffer.InitializeReaderFromStream(InStream,Text[1])">
+            <summary>
+            Initializes the CSV buffer.
+            </summary>
+            <remarks>
+            No data is inserted into the buffer.
+            </remarks>
+            <param name="CSVInStream">The stream from which to read data.</param>
+            <param name="CSVFieldSeparator">The character to use to split the values.</param>
+        </member>
+        <member name="M:Table::CSV Buffer.ReadLines(Integer):Boolean">
+            <summary>
+            Populated the CSV buffer with entries.
+            </summary>
+            <remarks>
+            The entries are read from the stream with which the CSV buffer was initialized.
+            </remarks>
+            <param name="NumberOfLines">The number of lines to read. If called with 0 or less, the function will read all of the data.</param>
+            <returns>True if there were any read lines; otherwise - false.</returns>
+        </member>
+        <member name="M:Table::CSV Buffer.ResetFilters">
+            <summary>
+            Resets the filters on the record.
+            </summary>
+        </member>
+        <member name="M:Table::CSV Buffer.GetValue(Integer,Integer):Text[250]">
+            <summary>
+            Gets a value from the record.
+            </summary>
+            <param name="LineNo">The line number to identify the value.</param>
+            <param name="FieldNo">The field number (or position) to identify the value.</param>
+            <error>The field in line %1 with index %2 does not exist. The data could not be retrieved.</error>
+            <returns>The value stored on line <paramref name="LineNo"/> and field <paramref name="FieldNo"/>.</returns>
+        </member>
+        <member name="M:Table::CSV Buffer.GetCSVLinesWhere(Integer,Text,CSV Buffer@)">
+            <summary>
+            Gets all the lines that contain a specific value on a specific field/position.
+            </summary>
+            <param name="FilterFieldNo">The field number (or position) of the value.</param>
+            <param name="FilterValue">The value to filter on.</param>
+            <param name="TempResultCSVBuffer">Out parameter to store the result.</param>
+        </member>
+        <member name="M:Table::CSV Buffer.GetValueOfLineAt(Integer):Text[250]">
+            <summary>
+            Gets the value on the current line with a specific field number (or position).
+            </summary>
+            <error>The field in line %1 with index %2 does not exist. The data could not be retrieved.</error>
+            <param name="FieldNo">The field number (or posistion) to identify the value.</param>
+            <returns>The value on the current line and field number <paramref name="FieldNo"/></returns>
+        </member>
+        <member name="M:Table::CSV Buffer.GetValueOfLineAt(Integer,Boolean):Text[250]">
+            <summary>
+            Gets the value on the current line with a specific field number (or position).
+            </summary>
+            <error>The field in line %1 with index %2 does not exist. The data could not be retrieved.</error>
+            <error>unless AcceptNonExisting is set</error>
+            <param name="FieldNo">The field number (or posistion) to identify the value.</param>
+            <returns>The value on the current line and field number <paramref name="FieldNo"/></returns>
+        </member>
+        <member name="M:Table::CSV Buffer.GetNumberOfColumns:Integer">
+            <summary>
+            Gets the number of columns store in the record.
+            </summary>
+            <returns>The number of fields for every line.</returns>
+        </member>
+        <member name="M:Table::CSV Buffer.GetNumberOfLines:Integer">
+            <summary>
+            Gets the number of lines stored in the record.
+            </summary>
+            <returns>The number of lines stored in the record.</returns>
+        </member>
+        <member name="M:.Price Asset.GetNo(Price Asset@)">
+            <summary>
+            The method fills the Price Asset parameter with "Asset No." and other data from the asset defined in the implementation codeunit. 
+            </summary>
+            <param name="PriceAsset">the record gets filled with data</param>
+        </member>
+        <member name="M:.Price Asset.GetId(Price Asset@)">
+            <summary>
+            The method fills the Price Asset parameter with "Asset ID" and other data from the asset defined in the implementation codeunit. 
+            </summary>
+            <param name="PriceAsset">the record gets filled with data</param>
+        </member>
+        <member name="M:.Price Asset.IsLookupOK(Price Asset@):Boolean">
+            <summary>
+            The method runs the modal page for looking up for an asset.
+            </summary>
+            <param name="PriceAsset">Defines the default asset to be shown on opening of the lookup page</param>
+            <returns>true if the lookup is completed</returns>
+        </member>
+        <member name="M:.Price Asset.ValidateUnitOfMeasure(Price Asset@):Boolean">
+            <summary>
+            The method validates if the unit of measure exists for the asset. 
+            Not used. This validation should happen in IsLookupUnitOfMeasureOK.
+            </summary>
+            <param name="PriceAsset">The asset with "Unit of Measure Code" that should be validated</param>
+        </member>
+        <member name="M:.Price Asset.IsLookupUnitOfMeasureOK(Price Asset@):Boolean">
+            <summary>
+            The method runs the modal page for looking up for a unit of measure.
+            </summary>
+            <param name="PriceAsset">Defines the default unit of measure to be shown on opening of the lookup page</param>
+            <returns>true if the lookup is completed</returns>
+        </member>
+        <member name="M:.Price Asset.IsLookupVariantOK(Price Asset@):Boolean">
+            <summary>
+            The method runs the modal page for looking up for an item variant.
+            </summary>
+            <param name="PriceAsset">Defines the default item variant to be shown on opening of the lookup page</param>
+            <returns>true if the lookup is completed</returns>
+        </member>
+        <member name="M:.Price Asset.IsAssetNoRequired:Boolean">
+            <summary>
+            The method should return true for an asset that requires "Asset No." to be filled. 
+            In W1 returns false just for one asset type - All.
+            </summary>
+            <returns>true if "Asset No." must be filled</returns>
+        </member>
+        <member name="M:.Price Asset.FillBestLine(Price Calculation Buffer,Enum::Price Amount Type,Price List Line@)">
+            <summary>
+            The method is called in case there is no a price list line that matches all filters defined by the document/journal line. 
+            As a result, the PriceListLine parameter gets pricing data from an asset card or another source.
+            </summary>
+            <param name="PriceCalculationBuffer">Contains data from a document/journal line</param>
+            <param name="AmountType">Price or Discount</param>
+            <param name="PriceListLine">gets filled with default data from an asset card or another source</param>
+        </member>
+        <member name="M:.Price Asset.FilterPriceLines(Price Asset,Price List Line@):Boolean">
+            <summary>
+            The method should add the filters for PriceListLine related to the PriceAsset, 
+            e.g., besides "Asset Type" and "Asset No." Item adds "Varian Code", Resource adds "Work Type Code" 
+            </summary>
+            <param name="PriceAsset">current price asset</param>
+            <param name="PriceListLine">the variable that gets additional filters</param>
+            <returns>not used</returns>
+        </member>
+        <member name="M:.Price Asset.PutRelatedAssetsToList(Price Asset,Codeunit::Price Asset List@)">
+            <summary>
+            The method should add assets related to the current one to build the multi-level PriceAssetList.
+            E.g., a resource asset can add up to two levels: "Resource Group" and "All resources" to setup the hierarchical search,
+            while an item asset adds "Item Discount Group" at the same level as "Item" is, so both participate in search simultaneously.
+            </summary>
+            <param name="PriceAsset">the current asset</param>
+            <param name="PriceAssetList">the list gets filled with one or more assets</param>
+        </member>
+        <member name="M:.Price Asset.FillFromBuffer(Price Asset@,Price Calculation Buffer)">
+            <summary>
+            The method should fill the PriceAsset with asset related data from the PriceCalculationBuffer.
+            Used in Add() method of the "Price Asset List" codeunit.
+            </summary>
+            <param name="PriceAsset">the asset to be added to the list</param>
+            <param name="PriceCalculationBuffer">the buffer containing asset's data</param>
+        </member>
+        <member name="M:.Price Source.GetNo(Price Source@)">
+            <summary>
+            The method fills the Price Source parameter with "Source No." and other data from the source defined in the implementation codeunit. 
+            </summary>
+            <param name="PriceSource">the record gets filled with data</param>
+        </member>
+        <member name="M:.Price Source.GetId(Price Source@)">
+            <summary>
+            The method fills the Price Source parameter with "Source ID" and other data from the source defined in the implementation codeunit. 
+            </summary>
+            <param name="PriceSource">the record gets filled with data</param>
+        </member>
+        <member name="M:.Price Source.IsForAmountType(Enum::Price Amount Type):Boolean">
+            <summary>
+            The method should return true if the source can define both price and discount.
+            If the price source is relevant only for prices 
+            it should return true when AmountType is Price, and false if AmountType is Discount
+            E.g., "Customer Price Group" is not relevant for discounts, "Customer Discount Group" is not relevant for prices.
+            </summary>
+            <param name="AmountType">Current amount type: price or discount</param>
+            <returns>true if the price source is relevant for the AmountType</returns>
+        </member>
+        <member name="M:.Price Source.IsLookupOK(Price Source@):Boolean">
+            <summary>
+            The method runs the modal page for looking up for a price source.
+            </summary>
+            <param name="PriceSource">Defines the default price source to be shown on opening of the lookup page</param>
+            <returns>true if the lookup is completed</returns>
+        </member>
+        <member name="M:.Price Source.VerifyParent(Price Source@):Boolean">
+            <summary>
+            The method should throw an error if the price source does not support the parent source, but "Parent Source No" is filled, 
+            and vice versa, if the parent source is supported but "Parent Source No" is empty or inconsistent.
+            E.g., "Job Task" is the only price source that supports "Job" price source as a parent.
+            </summary>
+            <param name="PriceSource">Current price source</param>
+            <returns>true is the parent is supported and validated</returns>
+        </member>
+        <member name="M:.Price Source.IsSourceNoAllowed:Boolean">
+            <summary>
+            The method should return true for a source that requires "Source No." to be filled. 
+            In W1 returns false for group source types: "All", "All Customers", "All Vendors", "All Jobs".
+            </summary>
+            <returns>true is "Source No." must be filled</returns>
+        </member>
+        <member name="M:.Price Source.GetGroupNo(Price Source):Code[20]">
+            <summary>
+            The method should return "Source No." of the related Customer, Vendor, or Job.
+            E.g., "Job Task" returns the parent job's "Source No.",
+            so the detailed price calculation setup defined for the job will be applied for all Job Tasks.
+            </summary>
+            <param name="PriceSource">Current price source</param>
+            <returns>"Source No." of the related customer, vendor, or job</returns>
+        </member>
+        <member name="O:Table::Purchase Discount Access">
+            <summary>
+            The purpose of the table is to setup access to UX and logic of the purchase discount calculation.
+            TableType is not set to Temporary only because the ReadPermission() method always returns true.
+            </summary>
+        </member>
+        <member name="O:Table::Purchase Price Access">
+            <summary>
+            The purpose of the table is to setup access to UX and logic of the purchase price calculation.
+            TableType is not set to Temporary only because the ReadPermission() method always returns true.
+            </summary>
+        </member>
+        <member name="O:Table::Sales Discount Access">
+            <summary>
+            The purpose of the table is to setup access to UX and logic of the sales discount calculation.
+            TableType is not set to Temporary only because the ReadPermission() method always returns true.
+            </summary>
+        </member>
+        <member name="O:Table::Sales Price Access">
+            <summary>
+            The purpose of the table is to setup access to UX and logic of the sales price calculation.
+            TableType is not set to Temporary only because the ReadPermission() method always returns true.
+            </summary>
+        </member>
+        <member name="O:Codeunit::Azure AI Usage">
+            <summary>
+            Retrieves information about the usage of the Azure AI services.
+            </summary>
+        </member>
+        <member name="M:Codeunit::Azure AI Usage.IncrementTotalProcessingTime(Enum::Azure AI Service,Decimal)">
+            <summary>
+            Increments the processing time for the provided Azure AI service with <paramref name="ProcessingTime"/>.
+            </summary>
+            <error>If <paramref name="ProcessingTime"/> is less or equal to zero.</error>
+            <param name="Service">The Azure AI service for which to increment the processing time.</param>
+            <param name="ProcessingTime">The value with which to increment the total processing time of the Azure AI service.</param>
+        </member>
+        <member name="M:Codeunit::Azure AI Usage.IsLimitReached(Enum::Azure AI Service,Decimal):Boolean">
+            <summary>
+            Checks whether the total processing time of a provided Azure AI service has reached a certain limit.
+            </summary>
+            <param name="Service">The Azure AI service for which to check.</param>
+            <param name="UsageLimit">The limit for which to check if it was reached.</param>
+            <returns>True if the limit was reached; otherwise - false.</returns>
+        </member>
+        <member name="M:Codeunit::Azure AI Usage.GetTotalProcessingTime(Enum::Azure AI Service):Decimal">
+            <summary>
+            Gets the total processing time of an Azure AI service.
+            </summary>
+            <param name="Service">The Azure AI service for which to retrieve the processing time.</param>
+            <returns>The processing time that the service has used so far.</returns>
+        </member>
+        <member name="M:Codeunit::Azure AI Usage.GetResourceLimit(Enum::Azure AI Service):Decimal">
+            <summary>
+            Gets the limit of an Azure AI service.
+            </summary>
+            <param name="Service">The Azure AI service for which to retrieve the resource limit.</param>
+            <returns>The resource limit for the provided service.</returns>
+        </member>
+        <member name="M:Codeunit::Azure AI Usage.GetLimitPeriod(Enum::Azure AI Service):Option">
+            <summary>
+            Gets the type of limit period of an Azure AI service.
+            </summary>
+            <param name="Service">The Azure AI service for which to retrieve the limit period.</param>
+            <returns>An option: Year,Month,Day,Hour.</returns>
+        </member>
+        <member name="M:Codeunit::Azure AI Usage.GetLastTimeUpdated(Enum::Azure AI Service):DateTime">
+            <summary>
+            Gets the last time the provided Azure AI service was updated.
+            </summary>
+            <param name="Service">The Azure AI service for which to retrieve the last time it was updated.</param>
+            <returns>A datetime that notes the last time the Azure AI service was updated.</returns>
+        </member>
+        <member name="M:Codeunit::Azure AI Usage.SetImageAnalysisIsSetup(Boolean)">
+            <summary>
+            Sets a value that denotes whether the Image Analysis service was setup.
+            </summary>
+            <remarks>The function will be discontinued as it should not be part of the this API.</remarks>
+            <param name="NewValue">The value to set.</param>
+        </member>
+        <member name="O:Table::Power BI Customer Reports">
+            <summary>
+            Stores in a BLOB the reports uploaded to Power BI using the Business Central pages.
+            </summary>
+            <remarks>
+            The schema of this table mirrors the one for table 2000000144 "Power BI Blob". 
+            Table 2000000144 contains the demo reports provided by Microsoft, wereas table 6310 (this table) contains the reports uploaded by the users.
+            </remarks>
+        </member>
+        <member name="O:Table::Power BI Report Configuration">
+            <summary>
+            Saves a list of reports to be displayed for a user in each specific context.
+            </summary>
+        </member>
+        <member name="O:Table::Power BI Report Uploads">
+            <summary>
+            Persists information about the reports that Business Central has uploaded to the user's Power BI personal workspace.
+            </summary>
+        </member>
+        <member name="O:Table::Power BI Selection Element">
+            <summary>
+            Represents a Power BI Report or Power BI Workspace as returned by the Power BI backend.
+            </summary>
+        </member>
+        <member name="O:Table::Power BI Service Status Setup">
+            <summary>
+            Contains only one record that tracks whether the Power BI service is throttling the calls coming from Business Central, and when the service will be available again.
+            </summary>
+        </member>
+        <member name="O:Table::Power BI User Configuration">
+            <summary>
+            Persists the first report to be displayed to a user, depending on the page and profile/role they are using.
+            </summary>
+        </member>
+        <member name="O:Table::Power BI User License">
+            <summary>
+            Caches the validity of the Power BI license for a user.
+            </summary>
+        </member>
+        <member name="O:Table::Power BI User Status">
+            <summary>
+            Tracks status for a user, e.g. if a user has active background sessions to synchronize Power BI reports.
+            </summary>
+        </member>
+        <member name="O:Table::What's New Notified">
+            <summary>
+            Stores which user has seen the What's New Wizard page.
+            </summary>
+        </member>
+        <member name="O:Table::Power BI Ongoing Deployments">
+            <summary>
+            Tracks if a user has active background sessions to deploy, delete or retry deployment of Power BI reports.
+            </summary>
+        </member>
+        <member name="M:Codeunit::Config# XML Exchange.ExportPackageXMLToStream(Config. Package,OutStream)">
+            <summary>
+            Export the provided configuration package to an OutStream.
+            </summary>
+            <param name="ConfigPackage">Configuration package to export.</param>
+            <param name="PackageOutStream">OutStream object that the content of the package will be written to.</param>
+        </member>
+        <member name="M:Codeunit::CopyFromToPriceListLine.GenerateDescription(Price List Header@)">
+            <summary>
+            Generates the description for the header, e.g. 'Customer 10000, 01.01.2021 - 31.01.2021'
+            </summary>
+            <param name="PriceListHeader">the generated header</param>
+        </member>
+        <member name="M:Codeunit::Effective Permissions Mgt#.HasDirectRIMPermissionsOnTableData(Integer):Boolean">
+            <summary>
+            Checks if the user has direct read, insert and modify permissions on the given table id.
+            </summary>
+            <param name="TableId">Id of the table</param>
+            <returns>True if user has direct read, insert and modify permissions on table.</returns>
+        </member>
+        <member name="O:Codeunit::Feature - Item Reference">
+            <summary>
+            Replaces "Item Cross Reference" data with "Item Reference" on enabling the Item Reference feature
+            </summary>
+        </member>
+        <member name="O:Codeunit::Feature - Price Calculation">
+            <summary>
+            Copies pricing data from old tables to "Price List Line" and "Price List Header" table.
+            </summary>
+        </member>
+        <member name="M:Codeunit::File Management.GetFileContents(Text):Text">
+            <summary>
+            Gets the file contents as text from the file path provided in UTF8 text encoding.
+            </summary>
+            <param name="FilePath">The path to the file.</param>
+            <returns>The text content of the file in UTF8 text encoding.</returns>
+        </member>
+        <member name="M:Codeunit::File Management.GetFileContents(Text,TextEncoding):Text">
+            <summary>
+            Gets the file contents as text from the file path provided in the requested text encoding.
+            </summary>
+            <param name="FilePath">The path to the file.</param>
+            <param name="Encoding">The text encoding to open the file with.</param>
+            <returns>The text content of the file in requested text encoding.</returns>
+        </member>
+        <member name="M:.Inventory Adjustment.SetFilterItem(Item@)">
+            <summary>
+            The method set filters for items for inventory cost adjustments codeunit. 
+            </summary>
+            <param name="NewItem">the record gets filtered</param>
+        </member>
+        <member name="M:.Inventory Adjustment.SetJobUpdateProperties(Boolean)">
+            <summary>
+            The method set skip job cost update parameter for inventory cost adjustment codeunit. 
+            </summary>
+            <param name="SkipUpdateJobItemCost">define if Job Item Cost update should be skipped</param>
+        </member>
+        <member name="M:.Inventory Adjustment.SetProperties(Boolean,Boolean)">
+            <summary>
+            The method set properties for inventory cost adjustment codeunit. 
+            </summary>
+            <param name="NewIsOnlineAdjmt">set Online Adjmt paramater for inventory cost adjustment codeunit</param>
+            <param name="NewIsOnlineAdjmt">set Post to G/L paramater for inventory cost adjustment codeunit</param>
+        </member>
+        <member name="M:.Inventory Adjustment.MakeMultiLevelAdjmt">
+            <summary>
+            The method run inventory cost adjustment codeunit. 
+            </summary>
+        </member>
+        <member name="M:Codeunit::NoSeriesManagement.DoGetNextNo(Code[20],Date,Boolean,Boolean):Code[20]">
+            <summary>
+            Gets the next number in a number series.
+            If ModifySeries is set to true, the number series is incremented when getting the next number.
+            NOTE: If you set ModifySeries to false you should manually increment the number series to ensure consistency.
+            </summary>
+            <param name="NoSeriesCode">The identifier of the number series.</param>
+            <param name="SeriesDate">The date of the number series. The default date is WorkDate.</param>
+            <param name="ModifySeries">
+            Set to true to increment the number series when getting the next number.
+            Set to false if you want to manually increment the number series.
+            </param>
+            <param name="NoErrorsOrWarnings">Set to true to disable errors and warnings.</param>
+            <returns>The next number in the number series.</returns>
+        </member>
+        <member name="M:Codeunit::OAuth 2#0 Mgt#.RequestAccessToken(OAuth 2.0 Setup@,Text@,Text,Text,Text,Text@,Text@):Boolean">
+            <summary>
+            Request access token using application/json ContentType.
+            </summary>
+        </member>
+        <member name="M:Codeunit::OAuth 2#0 Mgt#.RequestAccessTokenWithGivenRequestJson(OAuth 2.0 Setup@,Text,Text@,Text,Text,Text,Text@,Text@):Boolean">
+            <summary>
+            Request access token using given request json and application/json ContentType.
+            </summary>
+        </member>
+        <member name="M:Codeunit::OAuth 2#0 Mgt#.RequestAccessTokenWithContentType(OAuth 2.0 Setup@,Text,Text@,Text,Text,Text,Text@,Text@,Boolean):Boolean">
+            <summary>
+            Request access token using application/x-www-form-urlencoded ContentType if UseUrlEncodedContentType is set to true or application/json ContentType otherwise.
+            </summary>
+        </member>
+        <member name="M:Codeunit::OAuth 2#0 Mgt#.RefreshAccessToken(OAuth 2.0 Setup@,Text@,Text,Text,Text@,Text@):Boolean">
+            <summary>
+            Refreshes access token using application/json ContentType.
+            </summary>
+        </member>
+        <member name="M:Codeunit::OAuth 2#0 Mgt#.RefreshAccessTokenWithGivenRequestJson(OAuth 2.0 Setup@,Text,Text@,Text,Text,Text@,Text@):Boolean">
+            <summary>
+            Refreshes access token with given request json using application/json ContentType.
+            </summary>
+        </member>
+        <member name="M:Codeunit::OAuth 2#0 Mgt#.RefreshAccessTokenWithContentType(OAuth 2.0 Setup@,Text,Text@,Text,Text,Text@,Text@,Boolean):Boolean">
+            <summary>
+            Refreshes access token using application/x-www-form-urlencoded ContentType if UseUrlEncodedContentType is set to true or application/json ContentType otherwise.
+            </summary>
+        </member>
+        <member name="M:Codeunit::OpenXML Management.CopyDataToExcelTable(.Microsoft#Dynamics#Nav#OpenXml#Spreadsheet#WorksheetWriter,.System#Data#DataTable)">
+            <summary>
+            A CopyDataToExcelTable function overload with HideDialog parameter set to true.
+            </summary>
+        </member>
+        <member name="M:Codeunit::ReportManagement.OnMergeDocumentReport(Option,Integer,Option,InStream,Text,OutStream@,Boolean@)">
+            <summary>
+            Invoke the MergeDocument trigger.
+            </summary>
+            <param name="ObjectType">The object type for which the document will be rendered (Report).</param>
+            <param name="ObjectId">The object id.</param>
+            <param name="ReportAction">The report action, which can be one of SaveAsPdf, SaveAsWord, SaveAsExcel, Preview, Print or SaveAsHtml.</param>
+            <param name="XmlData">The xml data set in an input stream</param>
+            <param name="FileName">The file path where the output is to be stored. This parameter will contain the printer name if the print action is chosen.</param>
+            <param name="printDocumentStream">Output stream that will contain printed documents for cloud printers</param>
+            <param name="IsHandled">Will be set to true if the procedure call handled the merge.</param>
+        </member>
+        <member name="M:Codeunit::ReportManagement.OnCustomDocumentMergerEx(Integer,Option,JsonObject,InStream,InStream,OutStream@,Boolean@)">
+            <summary>
+            Invoke the OnCustomDocumentMergeEx trigger, which handled user defiend report renders given a dataset and a layout. The Render must be implemented in AL and return the output stream as defined by the format given in ReportAction.
+            </summary>
+            <param name="ObjectId">The report object id.</param>
+            <param name="ReportAction">The report action, which can be one of SaveAsPdf, SaveAsWord, SaveAsExcel, Preview, Print or SaveAsHtml.</param>
+            <param name="ObjectPayload">The JSON payload that defines metadata for the present report run.</param>
+            <param name="XmlData">The xml data set in an input stream</param>
+            <param name="LayoutData">The layout input stream. The actual format stored in the stream is defined by the layoutmodel json property (custom formats by the layoutmimetype property in the payload).</param>
+            <param name="DocumentStream">Output stream that will contain the rendered output documents.</param>
+            <param name="IsHandled">Will be set to true if the procedure call handled the merge.</param>
+        </member>
+        <member name="M:Codeunit::ReportManagement.OnSelectReportLayoutCode(Integer,Text@,Option@,Boolean@)">
+            <summary>
+            Fetch the currently selected layout code and layout type from application.
+            </summary>
+            <param name="ObjectId">The object id.</param>
+            <param name="LayoutCode">The report layout code if an application override has been set for the current run.</param>
+            <param name="LayoutType">The Layout type contained in the target stream.</param>
+            <param name="IsHandled">Will be set to true if the subscriber handled the action.</param>
+            <remarks>Internal event that will be removed when the report runtime API has been updated</remarks>
+        </member>
+        <member name="M:Codeunit::ReportManagement.OnFetchReportLayoutByCode(Integer,Text,OutStream@,Boolean@)">
+            <summary>
+            Fetch the currently selected layout code from application.
+            </summary>
+            <param name="ObjectId">The object id.</param>
+            <param name="LayoutCode">The report layout code if an application override has been set for the current run.</param>
+            <param name="TargetStream">The layout will be written to this stream.</param>
+            <param name="IsHandled">Will be set to true if the layout was found in the application database.</param>
+            <remarks>Internal event that will be removed when the report runtime API has been updated.</remarks>
+        </member>
+        <member name="M:Codeunit::ReportManagement.OnApplicationReportMergeStrategy(Integer,Text,Boolean@,Boolean@)">
+            <summary>
+            Select between platform or application report rendering. 
+            If this trigger return InApplication = true, then run the report and layout in a custom report render using the OnCustomDocumentMergerEx event.
+            </summary>
+            <param name="ObjectId">The object id.</param>
+            <param name="LayoutCode">The report layout code if an application override has been set for the current run.</param>
+            <param name="InApplication">True if the applicaction should render the report.</param>
+            <param name="IsHandled">Will be set to true if the subscriber handled the action.</param>
+        </member>
+        <member name="M:Codeunit::ReportManagement.OnWordDocumentMergerAppMode(Integer,Text,Boolean@,Boolean@)">
+            <summary>
+            Select between platform or application report rendering for Word reports only. 
+            If this trigger return InApplication = true, then run the report and layout in the legacy OnMergeDocumentReport event.
+            </summary>
+            <param name="ObjectId">The object id.</param>
+            <param name="LayoutCode">The report layout code if an application override has been set for the current run.</param>
+            <param name="InApplication">True if the applicaction should render the report.</param>
+            <param name="IsHandled">Will be set to true if the subscriber handled the action.</param>
+            <remarks>This event is for backward compatibility only and will be depricated.</remarks>
+        </member>
+        <member name="M:Codeunit::SelectionFilterManagement.GetSelectionFilter(RecordRef@,Integer):Text">
+            <summary>
+            Get a filter for the selected field from a provided record. Ranges will be used inside the filter were possible.
+            </summary>
+            <param name="TempRecRef">Record used to determine the field filter.</param>
+            <param name="SelectionFieldID">The field for which the filter will be constructed.</param>
+            <returns>The filter for the provided field ID. For example, '1..3|6'.</returns>
+            <remarks>This method queries the database intensively, can cause perfomance issues and even cause database server exceptions. Consider using <seealso cref="GetSimpleSelectionFilter"/>.</remarks>
+        </member>
+        <member name="M:Codeunit::SelectionFilterManagement.GetSelectionFilter(RecordRef@,Integer,Boolean):Text">
+            <summary>
+            Get a filter for the selected field from a provided record. Ranges will be used inside the filter were possible.
+            The values in the selected field must be unique and sorted in ascending order.
+            </summary>
+            <param name="SourceRecRef">Record used to determine the field filter.</param>
+            <param name="SelectionFieldID">The field for which the filter will be constructed.</param>
+            <param name="ComputeRangesUsingRecords">Specify if the computations should be performed on records, or in-memory structures.
+            If the parameter is false, the database load is greatly reduced, but the memory footprint is bigger</param>
+            <returns>The filter for the provided field ID. For example, '1..3|6'.</returns>
+        </member>
+        <member name="M:Codeunit::Word Template Interactions.Merge(Delivery Sorter@)">
+            <summary>
+            Performs mail merge on the Word templates from the attachments specified by TempDeliverySorterWord
+            and sends them according to the correspondence Type.
+            </summary>
+            <param name="TempDeliverySorterWord">A temporary table containing information about attachments and their recipients.</param>
+        </member>
+        <member name="M:Codeunit::Word Template Interactions.RunMergedDocument(Segment Line@,Attachment@)">
+            <summary>
+            Download a merged Word template for a given segment line and attachment.
+            </summary>
+            <param name="SegLine">Specifies the segment line for which the attachment is for.</param>
+            <param name="Attachment">Specifies the attachemnt (Word template) to be downloaded.</param>
+        </member>
+        <member name="M:Codeunit::Word Template Interactions.IsWordDocumentExtension(Text):Boolean">
+            <summary>
+            Checks if the provided file extension is a Word document extension.
+            </summary>
+            <param name="FileExtension">File extension to check.</param>
+            <returns>True if the provided extension is a Word document extension, false otherwise.</returns>
+        </member>
+        <member name="O:Codeunit::BOM Tree">
+            <summary>
+            Helps create and traverse data as nodes in a tree. The structure supports disjoint trees as well as multiple parents for a child node.
+            </summary>
+        </member>
+        <member name="M:Codeunit::BOM Tree.AddRelation(Codeunit::BOM Node,Codeunit::BOM Node)">
+            <summary>
+            Adds a relation between two nodes connected in a parent- child relationship.
+            </summary>
+            <param name="Parent">The node that represents the parent part of the relationship.</param>
+            <param name="Child">The node that represents the child part of the relationship.</param>
+        </member>
+        <member name="M:Codeunit::BOM Tree.TraverseDown">
+            <summary>
+            Traverses the nodes starting from the root node and traverses down to the children and so on. Note that there can be many root nodes, in which case, the traversal starts from each of them.
+            </summary>
+        </member>
+        <member name="M:Codeunit::BOM Tree.TraverseDown(Codeunit::BOM Node)">
+            <summary>
+            Traverses the nodes starting from the given node and traverses down to the children and so on. 
+            </summary>
+            <param name="Node">The node from which the traversal should start.</param>
+        </member>
+        <member name="M:Codeunit::BOM Tree.ChildHasKey(Text,Text):Boolean">
+            <summary>
+            Finds if a node with the given key is a child of another node with the given parent key.
+            <param name="ParentKey">The key of the parent node.</param>
+            <param name="ChildKey">The key of the child node.</param>
+            <returns>True if there was a child found with the key, false otherwise.</returns>
+            <remarks>This will return false if the node with the parent key was not found.</remarks>
+            </summary>
+        </member>
+        <member name="O:Codeunit::BOM Tree Node Dictionary">
+            <summary>
+            This exposes a collection of the BOM Tree Node objects that are hashed against the key for those instances.
+            </summary>
+        </member>
+        <member name="M:Codeunit::BOM Tree Node Dictionary.Add(Codeunit::BOM Tree Node)">
+            <summary>
+            Adds an instance to the dictionary. The key is fetched from the GetKey() procedure of the Instance implementation.
+            <param name="Instance">The instance to add.</param>
+            <remarks>In case there is another instance with a key same as the one being added, an error shall be raised.</remarks>
+            </summary>
+        </member>
+        <member name="M:Codeunit::BOM Tree Node Dictionary.Get(Text,Codeunit::BOM Tree Node@)">
+            <summary>
+            Fetches the instance based on the given key.
+            <param name="InstanceKey">The key given.</param>
+            <param name="Found">The instance that was fetched.</param>
+            </summary>
+        </member>
+        <member name="M:Codeunit::BOM Tree Node Dictionary.Remove(Text)">
+            <summary>
+            Removes the instance from the dictionary that correponds to the given key.
+            <param name="InstanceKey">The given key.</param>
+            </summary>
+        </member>
+        <member name="M:Codeunit::BOM Tree Node Dictionary.ResetEnumerator">
+            <summary>
+            Resets the internal variables that allow iterating through the items in the dictionary.
+            <remarks>It is a good practice to call this before starting an iteration.</remarks>
+            </summary>
+        </member>
+        <member name="M:Codeunit::BOM Tree Node Dictionary.MoveNext:Boolean">
+            <summary>
+            Advances the enumerator to the next element of the dictionary.
+            </summary>
+        </member>
+        <member name="M:Codeunit::BOM Tree Node Dictionary.GetCurrent(Codeunit::BOM Tree Node@)">
+            <summary>
+            Gets the element in the dictionary at the current position of the enumerator.
+            <param name="Instance">The instance pointed at.</param>
+            </summary>
+        </member>
+        <member name="M:Codeunit::BOM Tree Node Dictionary.Count:Integer">
+            <summary>
+            Gets the number of items in the dictionary.
+            </summary>
+        </member>
+        <member name="O:Codeunit::Email Feature">
+            <summary>
+            Provides functionality to determine whether the email enhancements have been enabled.
+            </summary>
+        </member>
+        <member name="M:Codeunit::Email Feature.IsEnabled:Boolean">
+            <summary>
+            Checks if the feature has been enabled for all users. 
+            </summary>
+        </member>
+        <member name="M:Codeunit::Email Scenario Mapping.FromReportSelectionUsage(Enum::Report Selection Usage):Enum::Email Scenario">
+            <summary>
+            Gets the document sending email scenario from report selection usage.
+            </summary>
+            <param name="ReportSelectionUsage"></param>
+            <returns>The email scenario corresponding to the report selection usage</returns>
+        </member>
+        <member name="M:Codeunit::Email Scenario Mapping.OnAfterFromReportSelectionUsage(Enum::Report Selection Usage,Enum::Email Scenario@)">
+            <summary>
+            Subscribe to this event to add custom mappings from report selection usage (in case the enum was extended) to email scenarios.
+            </summary>
+            <param name="ReportSelectionUsage">The input report selection usage of the FromReportSelectionUsage function.</param>
+            <param name="EmailScenario">The output email scenario of the FromReportSelectionUsage function.</param>
+        </member>
+        <member name="O:Codeunit::Global Admin Notifier">
+            <summary>
+            The purpose of this codeunit is to notify users with only Global Administration role that their capabilities in Business Central are limited. 
+            </summary>
+        </member>
+        <member name="M:Codeunit::Job Queue Management.FindStaleJobsAndSetError">
+            <summary>
+            To find stale jobs (in process jobs with no scheduled tasks) and set them to error state.
+            For both JQE and JQLE
+            </summary>
+        </member>
+        <member name="M:Codeunit::Job Queue Management.ShouldProcessStaleJobQueueLogEntries(Job Queue Log Entry):Boolean">
+            <summary>
+            Due to certain usages of JQLE, we need to determine if the log entry is from normal usage
+            Abnormal usages like assisted company setup should be ignored
+            </summary>
+        </member>
+        <member name="M:Codeunit::Permission Manager.GetDefaultProfileID(Guid,All Profile@)">
+            <summary>
+            This procedure retrieves a Default Profile ID to be used for a user, in case there is no valid 
+            custom profile set for them in their User Personalization. 
+            </summary>
+            <param name="UserSecurityID">The SID for the User to find a default profile for</param>
+            <param name="AllProfile">The returned AllProfile that is the default for the specified user</param>
+            <remarks>
+            <list type="number">
+              <item><description>If we can provide a tailored default for the user (from the Plan/License), return that, otherwise</description></item>
+              <item><description>If there is any system-wide default AllProfile in the table, return it, otherwise</description></item>
+              <item><description>Find the default Role Center ID for the system (which checks the Plan/License again and has some additional 
+              defaulting logic), and if there is a profile for it return it, otherwise</description></item>
+              <item><description>Fall back to just return the first AllProfile available in the table</description></item>
+            </list>
+            </remarks>
+        </member>
+        <member name="O:Codeunit::Power BI Report Synchronizer">
+            <summary>
+            Encapsulates the logic to deploy and/or delete default Power BI reports. Should be run in background.
+            </summary>
+        </member>
+        <member name="M:Codeunit::Power BI Url Mgt.GetPowerBIResourceUrl:Text">
+            <summary>
+            Returns the AAD resource URL for Power BI.
+            </summary>
+        </member>
+        <member name="M:Codeunit::Power BI Url Mgt.GetPowerBIApiUrl:Text">
+            <summary>
+            Returns the URL to be used for Power BI report upload.
+            </summary>
+        </member>
+        <member name="M:Codeunit::Power BI Url Mgt.GetPowerBIReportsUrl:Text">
+            <summary>
+            Returns the URL to retrieve the Power BI reports in the user's personal workspace.
+            </summary>
+        </member>
+        <member name="M:Codeunit::Power BI Url Mgt.GetPowerBISharedReportsUrl(Guid):Text">
+            <summary>
+            Returns the URL to retrieve the Power BI reports in one of the user's shared workspaces.
+            </summary>
+        </member>
+        <member name="M:Codeunit::Power BI Url Mgt.GetPowerBIWorkspacesUrl:Text">
+            <summary>
+            Returns the URL to retrieve the Power BI workspaces shared with the user.
+            </summary>
+        </member>
+        <member name="M:Codeunit::Power BI Url Mgt.GetLicenseUrl:Text">
+            <summary>
+            Returns the URL where the user can get a Power BI license.
+            </summary>
+        </member>
+        <member name="M:Codeunit::Power BI Url Mgt.GetPowerBIEmbedReportsUrl:Text">
+            <summary>
+            Returns the base URL to embed a Power BI report in Business Central.
+            </summary>
+        </member>
+        <member name="M:Codeunit::Profile Helper.ImportProfiles(Profile Import@):Guid">
+            <summary>
+            Given a read profile package, this function will import the profiles specified from that package
+            </summary>
+            <param name="TempProfileImport"></param>
+            <returns>Guid representing the import diagnostics ID</returns>
+        </member>
+        <member name="O:Codeunit::SmartList Designer">
+            <summary>
+            Contains methods for interacting with/opening the SmartList Designer 
+            </summary>
+        </member>
+        <member name="M:Codeunit::SmartList Designer.DoesUserHaveAPIAccess(Guid):Boolean">
+            <summary>
+            Check if the provided user has been granted access to the
+            SmartList Designer API
+            </summary>
+            <returns>True if provided user has access to the API; Otherwise false.</returns>
+        </member>
+        <member name="M:Codeunit::SmartList Designer.RunForNew">
+            <summary>
+            Opens up the SmartList Designer to create a new SmartList
+            </summary>
+        </member>
+        <member name="M:Codeunit::SmartList Designer.RunForQuery(Guid)">
+            <summary>
+            Opens up the SmartList Designer to edit an existing SmartList
+            </summary>
+            <param name="QueryId">The ID of the existing SmartList query to edit.</param>
+        </member>
+        <member name="M:Codeunit::SmartList Designer.RunForTable(Integer)">
+            <summary>
+            Opens up the SmartList Designer to create a new SmartList using
+            the provided table as a starting point.
+            </summary>
+            <param name="TableNo">The ID of a table to start creating a SmartList query over.</param>
+        </member>
+        <member name="M:Codeunit::SmartList Designer.RunForTableAndView(Integer,Text)">
+            <summary>
+            Opens up the SmartList Designer to create a new SmartList based
+            on a selected table.
+            </summary>
+            <param name="TableNo">The ID of the table to use as the basis for a SmartList query.</param>
+            <param name="ViewId">The optional view ID token that contains information about the page or view that the user was using before they opened SmartList Designer.</param>
+        </member>
+        <member name="M:Codeunit::SmartList Designer.IsEnabled:Boolean">
+            <summary>
+            Indicates if the SmartList designer functionality is enabled.
+            </summary>
+            <returns>True if the designer is enabled; Otherwise false.</returns>
+        </member>
+        <member name="M:Codeunit::Sync#Dep#Fld-Utilities.GetPreviousRecord(Variant,RecordRef@):Boolean">
+            <summary>
+            Gets the previous record - xRec is not the previous version of the record it is the previous record on the page.
+            If the update was not started from page, xRec will be same as the Rec.
+            This function MUST be called before the update of the record is done, for example from OnBeforeModify trigger.
+            </summary>
+            <param name="CurrentRecord">Current record that we want to get a previous version of.</param>
+            <param name="PreviousRecordRef">Previous record.</param>
+            <returns>A boolean that indicates whether the previous record exists.</returns>
+        </member>
+        <member name="M:Codeunit::Sync#Dep#Fld-Utilities.IsFieldSynchronizationDisabled:Boolean">
+            <summary>
+            Check if synchronization is disabled.
+            By default is disabled when install or upgrade is in progress.
+            In that cases is not suitable to run synchronization.
+            </summary>
+            <returns>A boolean that indicates whether the synchronization is disabled.</returns>
+        </member>
+        <member name="O:Codeunit::Upgrade Permission Sets">
+            <summary>
+            Upgrade code to fix references of obsolete permission sets.
+            </summary>
+        </member>
+        <member name="O:Codeunit::Upgrade Privacy Notices">
+            <summary>
+            Upgrade code to add Privacy Notices
+            </summary>
+        </member>
+        <member name="M:Codeunit::Url Helper Impl#.GetPowerBIResourceUrl:Text">
+            <summary>
+            Returns the AAD resource URL for Power BI.
+            </summary>
+        </member>
+        <member name="M:Codeunit::Url Helper Impl#.GetPowerBIApiUrl:Text">
+            <summary>
+            Returns the URL to be used for Power BI report upload.
+            </summary>
+        </member>
+        <member name="M:Codeunit::Url Helper Impl#.GetPowerBIReportsUrl:Text">
+            <summary>
+            Returns the URL to retrieve the Power BI reports in the user's personal workspace.
+            </summary>
+        </member>
+        <member name="M:Codeunit::Url Helper Impl#.GetPowerBIEmbedReportsUrl:Text">
+            <summary>
+            Returns the base URL to embed a Power BI report in Business Central.
+            </summary>
+        </member>
+        <member name="O:Page::Config# Package Warning">
+            <summary> 
+            This page is meant to inform users that importing and applying Configuration packages may affect the system's performance.
+            </summary>
+            <remarks>This page is not meant to be used by extensions.</remarks>
+        </member>
+        <member name="O:Page::Data Administration Guide">
+            <summary>
+            Manage the size of your database. The guide will suggest ways to clean up expired records.
+            </summary>
+        </member>
+        <member name="M:Page::Data Administration Guide.OnAfterLoadPages(List@,Dictionary@,List@)">
+            <summary>
+            Use this event to add new pages to the guide.
+            </summary>
+            <param name="Pages">The list of pages that make up the guide.</param>
+            <param name="SkipTo">A dictionary which defines which pages allow skipping to another page. The dictionary key is the page from which you can skip, the value is the page to which you can skip.</param>
+        </member>
+        <member name="M:Page::Data Administration Guide.OnAfterUpdateControls(Enum::Data Administration Guide Page)">
+            <summary>
+            Use this event to set the visibility of pages in the guide.
+            </summary>
+            <param name="CurrentPage">The current page of the guide.</param>
+        </member>
+        <member name="O:Page::Global Admin Message">
+            <summary>
+            The page displays a warning message to users with the Global Administrator role but without a Business Central license.
+            </summary>
+            <remarks>This page is not supposed to be referenced in extensions.</remarks>
+        </member>
+        <member name="O:Page::Upload Power BI Report">
+            <summary>
+            Allows users to upload report files to Business Central, which will automatically deploy them to Power BI.
+            </summary>
+        </member>
+        <member name="E:Enum::Company Setup Status. ">
+            <summary>
+            Undefined.
+            </summary>
+        </member>
+        <member name="E:Enum::Company Setup Status.Completed">
+            <summary>
+            Setup completed.
+            </summary>
+        </member>
+        <member name="E:Enum::Company Setup Status.In Progress">
+            <summary>
+            Setup is in progress.
+            </summary>
+        </member>
+        <member name="E:Enum::Company Setup Status.Error">
+            <summary>
+            Setup ended in an error.
+            </summary>
+        </member>
+        <member name="E:Enum::Company Setup Status.Missing Permission">
+            <summary>
+            The user performing setup is missing permissions.
+            </summary>
+        </member>
+        <member name="O:Enum::Data Administration Guide Page">
+            <summary>
+            The values in this enum represent the pages in the Data Administration Guide page
+            </summary>
+        </member>
+        <member name="E:Enum::Data Administration Guide Page.Blank">
+            <summary>
+            this value should not be used.
+            </summary>
+        </member>
+        <member name="E:Enum::Data Administration Guide Page.Introduction">
+            <summary>
+            This value is used to identify the introduction page.
+            </summary>
+        </member>
+        <member name="E:Enum::Data Administration Guide Page.RetenPolIntro">
+            <summary>
+            This value is used to identify the retention policy introduction page.
+            </summary>
+        </member>
+        <member name="E:Enum::Data Administration Guide Page.CompaniesIntro">
+            <summary>
+            This value is used to identify the companies introduction page.
+            </summary>
+        </member>
+        <member name="E:Enum::Data Administration Guide Page.DateCompressionIntro">
+            <summary>
+            This value is used to identify the date compression introduction page.
+            </summary>
+        </member>
+        <member name="E:Enum::Data Administration Guide Page.DateCompressionSelection">
+            <summary>
+            This value is used to identify the date compression entries selection page.
+            </summary>
+        </member>
+        <member name="E:Enum::Data Administration Guide Page.DateCompressionOptions">
+            <summary>
+            This value is used to identify the date compression options page.
+            </summary>
+        </member>
+        <member name="E:Enum::Data Administration Guide Page.DateCompressionOptions2">
+            <summary>
+            This value is used to identify the second date compression options selection page.
+            </summary>
+        </member>
+        <member name="E:Enum::Data Administration Guide Page.DateCompressionRun">
+            <summary>
+            This value is used to identify the run date compression page.
+            </summary>
+        </member>
+        <member name="E:Enum::Data Administration Guide Page.DateCompressionResult">
+            <summary>
+            This value is used to identify the date compression results page.
+            </summary>
+        </member>
+        <member name="E:Enum::Data Administration Guide Page.Conclusion">
+            <summary>
+            This value is used to identify the conclusion page.
+            </summary>
+        </member>
+        <member name="O:Enum::Date Compression Period Length">
+            <summary>
+            Represents the periods of time for which date compression can summarize entries.
+            </summary>
+        </member>
+        <member name="E:Enum::Date Compression Period Length.Day">
+            <summary>
+            Summarize data for each day.
+            </summary>
+        </member>
+        <member name="E:Enum::Date Compression Period Length.Week">
+            <summary>
+            Summarize data for each week.
+            </summary>
+        </member>
+        <member name="E:Enum::Date Compression Period Length.Month">
+            <summary>
+            Summarize data for each month.
+            </summary>
+        </member>
+        <member name="E:Enum::Date Compression Period Length.Quarter">
+            <summary>
+            Summarize data for each quarter.
+            </summary>
+        </member>
+        <member name="E:Enum::Date Compression Period Length.Year">
+            <summary>
+            Summarize data for each year.
+            </summary>
+        </member>
+        <member name="E:Enum::Date Compression Period Length.Period">
+            <summary>
+            Summarize data for each period.
+            </summary>
+        </member>
+        <member name="O:Enum::Licenses">
+            <summary>
+            Specifies the type of license.
+            </summary>
+        </member>
+        <member name="O:Enum::Permission">
+            <summary>
+            Specifies the rank of a permission.
+            The higher the rank (value) is, the more restrictive the persmission is.
+            </summary>
+        </member>
+        <member name="E:Enum::Permission.None">
+            <summary>
+            Denotes that the permission is missing.
+            </summary>
+        </member>
+        <member name="E:Enum::Permission.Indirect">
+            <summary>
+            Denotes that the permission is Indirect.
+            </summary>
+        </member>
+        <member name="E:Enum::Permission.Direct">
+            <summary>
+            Denotes that the permission is Direct.
+            </summary>
+        </member>
+        <member name="M:.Price Source Group.IsSourceTypeSupported(Enum::Price Source Type):Boolean">
+            <summary>
+            "Price Source Group" enum is a subset of the "Price Source Type" enum. 
+            The group limits allowed Source Types, e.g. for Customer group the Vendor source type is not supported.
+            Returns true if the passed price source type belongs to the price source group.
+            </summary>
+            <param name="SourceType">Price source type</param>
+        </member>
+        <member name="M:.Price Source Group.GetGroup:Enum::Price Source Group">
+            <summary>
+            Some of source types are mapped to the price source groups that is used in setup. 
+            If the source type does not belong to one group then it returns group All.
+            </summary>
+            <returns>the source group.</returns>
+        </member>
+        <member name="O:Enum::Azure AI Service">
+            <summary>
+            The types of Azure AI services that are available in Business Central.
+            </summary>
+        </member>
+        <member name="E:Enum::Azure AI Service.Machine Learning">
+            <summary>
+            Value corresponds to an Azure Machine Learning service. 
+            </summary>
+        </member>
+        <member name="E:Enum::Azure AI Service.Computer Vision">
+            <summary>
+            Value corresponds to an Azure Computer Vision service. 
+            </summary>
+        </member>
+        <member name="O:Enum::Power BI Element Type">
+            <summary>
+            Enum that lists the possible types of elements returned by API calls to Power BI, when discovering the Power BI reports.
+            </summary>
+            <remarks>
+            When displayed in a tree structure in the Web Client, the tree structure needs to be sorted by this enum. On the other hand, Web Client does not support 
+            descending sorting. So, make sure you keep this enum IDs ordered from the larger group to the smaller group.
+            See also: 1) Bug 335749; 2) Documentation at https://docs.microsoft.com/en-us/dynamics365/business-central/dev-itpro/developer/methods-auto/record/record-setascending-method
+            </remarks>
+        </member>
+        <member name="M:.Average Cost Entry Point.GetMaxValuationDate(Item Ledger Entry,Value Entry):Date">
+            <summary>
+            The method find latest valuation date. 
+            </summary>
+            <param name="ItemLedgerEntry">Set Item Ledger Entry with data for search filters.</param>
+            <param name="ValueEntry">Set Value Entry record which provide original Valuation Date for the search.</param>
+        </member>
+        <member name="M:.Average Cost Entry Point.GetValuationPeriod(Date@,Date)">
+            <summary>
+            The method find valuation period for posting date. 
+            </summary>
+            <param name="CalendarPeriod">Date record for valuation period.</param>
+            <param name="PostingDate">Set Posting Date for the search.</param>
+        </member>
+        <member name="M:.Average Cost Entry Point.DeleteBuffer(Code[20],Date)">
+            <summary>
+            The method delete average cost adjustment buffer records for selected Item and from Valuation Date. 
+            </summary>
+            <param name="ItemNo">Set Item No. fo filtering buffer records. Use blank value to skip this filter.</param>
+            <param name="FromValuationDate">Set the filter from Valuation Date. Use 0D to skip this filter.</param>
+        </member>
+        <member name="M:.Average Cost Entry Point.IsEntriesAdjusted(Code[20],Date):Boolean">
+            <summary>
+            The method check is all ledger entries have been adjusted for selected item and before ending date. 
+            </summary>
+            <param name="ItemNo">Set Item No. fo filtering buffer records. Use blank value to skip this filter.</param>
+            <param name="EndingDate">Set the filter before Ending Date. Use 0D to skip this filter.</param>
+        </member>
+        <member name="M:.Average Cost Entry Point.LockBuffer">
+            <summary>
+            The method lock average cost adjustment buffer table. 
+            </summary>
+        </member>
+        <member name="M:.Average Cost Entry Point.UpdateValuationDate(Value Entry)">
+            <summary>
+            The method update average cost adjustment buffer table based on data in value entry. 
+            </summary>
+            <param name="ValueEntry">Set parameter Value Entry with data for update.</param>
+        </member>
+        <member name="M:.Contact Business Relation Link.GetTableAndSystemId(Code[20],Integer@,Guid@):Boolean">
+            <summary>
+            Returns table and system id of record that match the No. field 
+            </summary>
+            <param name="No">The field to lookup</param>
+            <param name="TableId">Table id of implementation</param>
+            <param name="SystemId">System id for the found record</param>
+            <returns>True if the record was found</returns>
+        </member>
+        <member name="M:.Line With Price.GetTableNo:Integer">
+            <summary>
+            Returns the table number of the internal record line.
+            </summary>
+            <returns>The table id of the source line.</returns>
+        </member>
+        <member name="M:.Line With Price.SetLine(Enum::Price Type,Variant)">
+            <summary>
+            Setup the internal record line. Applicable for the journal lines that does not have a header record.
+            The PriceType parameter defines what type of price is going to be calculated.
+            </summary>
+            <param name="PriceType">the price type for which the price or discount will be calculated.</param>
+            <param name="Line">the source record line</param>
+        </member>
+        <member name="M:.Line With Price.SetLine(Enum::Price Type,Variant,Variant)">
+            <summary>
+            Setup the internal records - line and header. Applicable for the document lines.
+            The PriceType parameter defines what type of price is going to be calculated.
+            </summary>
+            <param name="PriceType">the price type for which the price or discount will be calculated.</param>
+            <param name="Header">the source record header</param>
+            <param name="Line">the source record line</param>
+        </member>
+        <member name="M:.Line With Price.SetSources(Codeunit::Price Source List@)">
+            <summary>
+            This method allows to overwrite the internal price source list that is normally filled by SetLine() method.
+            </summary>
+            <param name="NewPriceSourceList">The new list of sources that should be attached to the line</param>
+        </member>
+        <member name="M:.Line With Price.GetLine(Variant@)">
+            <summary>
+            After the calculations are done this method allows to get the updated internal record line.
+            </summary>
+            <param name="Line">The updated record line</param>
+        </member>
+        <member name="M:.Line With Price.GetLine(Variant@,Variant@)">
+            <summary>
+            After the calculations are done this method allows to get the updated internal record line and header.
+            </summary>
+            <param name="Line">The updated record line</param>
+            <param name="Line">The updated record header</param>
+        </member>
+        <member name="M:.Line With Price.GetAssetType:Enum::Price Asset Type">
+            <summary>
+            Returns the asset type of the internal record line.
+            </summary>
+            <returns>The asset type of the internal record line.</returns>
+        </member>
+        <member name="M:.Line With Price.GetPriceType:Enum::Price Type">
+            <summary>
+            Returns the price type that was set by the SetLine() method.
+            </summary>
+            <returns>The price type</returns>
+        </member>
+        <member name="M:.Line With Price.IsPriceUpdateNeeded(Enum::Price Amount Type,Boolean,Integer):Boolean">
+            <summary>
+            This method defines if the source line should be updated after the search for a price list line is done.
+            </summary>
+            <param name="AmountType">The amount type</param>
+            <param name="FoundPrice">If FoundPrice is true this method returns true</param>
+            <param name="CalledByFieldNo">The number of the field that caused the calculation</param>
+            <returns>If the price amount should be updated</returns>
+        </member>
+        <member name="M:.Line With Price.IsDiscountAllowed:Boolean">
+            <summary>
+            The calculation of the price defines if the discount allowed for this line.
+            This method should be called after the price is calculated.
+            </summary>
+            <returns>If the discount allowed for this line</returns>
+        </member>
+        <member name="M:.Line With Price.Verify">
+            <summary>
+            Verification of the line before price calculation, usually some TESTFIELD calls.
+            </summary>
+        </member>
+        <member name="M:.Line With Price.SetAssetSourceForSetup(Dtld. Price Calculation Setup@):Boolean">
+            <summary>
+            Copy asset and source data to the buffer to search for a detailed price calculation setup.
+            </summary>
+            <param name="DtldPriceCalculationSetup">The buffer record that get values of filters for search</param>
+            <returns>If the internal record line is consistent and all filters for detailed setup are in place</returns>
+        </member>
+        <member name="M:.Line With Price.CopyToBuffer(Codeunit::Price Calculation Buffer Mgt#@):Boolean">
+            <summary>
+            Copy the fields related for price calculation to the buffer that is used in calculation handlers.
+            </summary>
+            <param name="PriceCalculationBufferMgt">The buffer that got filled</param>
+            <returns>If all the internal record line is consistent and can fill the buffer</returns>
+        </member>
+        <member name="M:.Line With Price.Update(Enum::Price Amount Type)">
+            <summary>
+            This method is called after the calculation and allow to do corrections.
+            </summary>
+            <param name="AmountType">The amount type</param>
+        </member>
+        <member name="M:.Line With Price.SetPrice(Enum::Price Amount Type,Price List Line)">
+            <summary>
+            After calculation is done, and the right price list line is found this method copies required fields
+            to the internal record line. The amount type defines what amount will be copied.
+            </summary>
+            <param name="AmountType">the amount type.</param>
+            <param name="PriceListLine">The price list line that should define the price or discount.</param>
+        </member>
+        <member name="M:.Line With Price.ValidatePrice(Enum::Price Amount Type)">
+            <summary>
+            The method SetPrice() copies amounts to the internal record line. 
+            This method calls the validation triggers on the amount defined by AmountType parameter.
+            </summary>
+            <param name="AmountType">the amount type</param>
+        </member>
+        <member name="M:.Price Calculation.Init(.Line With Price,Price Calculation Setup)">
+            <summary>
+            Save the source line as an interface variable inside the price calculation codeunit
+            </summary>
+            <param name="LineWithPrice">The interface parameter for the document or journal line.</param>
+            <returns>The updated source line.</returns>
+        </member>
+        <member name="M:.Price Calculation.GetLine(Variant@)">
+            <summary>
+            After the calculation is done by calling ApplyPrice() or ApplyDiscount() 
+            the updated line is retrieved by this method. 
+            </summary>
+            <param name="Line">The updated source line.</param>
+        </member>
+        <member name="M:.Price Calculation.ApplyDiscount">
+            <summary>
+            Executes the calcluation of the discount amount. 
+            </summary>
+        </member>
+        <member name="M:.Price Calculation.ApplyPrice(Integer)">
+            <summary>
+            Executes the calculation of the price or cost.
+            </summary>
+            <param name="CalledByFieldNo">The id of the field that caused the calculation.</param>
+        </member>
+        <member name="M:.Price Calculation.CountDiscount(Boolean):Integer">
+            <summary>
+            Returns the number of price list lines with discounts that fit the source line.
+            </summary>
+            <param name="ShowAll">If true it widens the filters set to the price list line.</param>
+            <returns>Number of price list lines with discounts that fit the source line.</returns>
+        </member>
+        <member name="M:.Price Calculation.CountPrice(Boolean):Integer">
+            <summary>
+            Returnes the number of price list lines with prices that fit the source line.
+            </summary>
+            <param name="ShowAll">If true it widens the filters set to the price list line.</param>
+            <returns>Number of price list lines with prices that fit the source line.</returns>
+        </member>
+        <member name="M:.Price Calculation.FindDiscount(Price List Line@,Boolean):Boolean">
+            <summary>
+            Returns the list of price list lines with discount that fit the source line.
+            </summary>
+            <param name="TempPriceListLine">the temporary buffer containing the price list line that fit the source line.</param>
+            <param name="ShowAll">If true it widens the filters set to the price list line.</param>
+            <returns>true if any price list line is found</returns>
+        </member>
+        <member name="M:.Price Calculation.FindPrice(Price List Line@,Boolean):Boolean">
+            <summary>
+            Returns the list of price list lines with prices ot costs that fit the source line.
+            </summary>
+            <param name="TempPriceListLine">the temporary buffer containing the price list line that fit the source line.</param>
+            <param name="ShowAll">If true it widens the filters set to the price list line.</param>
+            <returns>true if any price list line is found</returns>
+        </member>
+        <member name="M:.Price Calculation.IsDiscountExists(Boolean):Boolean">
+            <summary>
+            Returns true if exists any price list line with discount that fit the source line. 
+            </summary>
+            <param name="ShowAll">If true it widens the filters set to the price list line.</param>
+            <returns>true if any price list line is found</returns>
+        </member>
+        <member name="M:.Price Calculation.IsPriceExists(Boolean):Boolean">
+            <summary>
+            Returns true if exists any price list line with price or cost that fit the source line. 
+            </summary>
+            <param name="ShowAll">If true it widens the filters set to the price list line.</param>
+            <returns>true if any price list line is found</returns>
+        </member>
+        <member name="M:.Price Calculation.PickDiscount">
+            <summary>
+            Allows to pick from the list of price list lines with disocunt that fit the source line.
+            </summary>
+        </member>
+        <member name="M:.Price Calculation.PickPrice">
+            <summary>
+            Allows to pick from the list of price list lines with price or cost that fit the source line.
+            </summary>
+        </member>
+        <member name="M:.Price Calculation.ShowPrices(Price List Line@)">
+            <summary>
+            Opens the list page for reviewing existing prices. 
+            </summary>
+            <param name="TempPriceListLine">The buffer with the found price list lines.</param>
+        </member>
+        <member name="M:.Invoice Posting.Check(Integer)">
+            <summary>
+            Check if implementation codeunit designed for source document type posting
+            </summary>
+        </member>
+        <member name="M:.Invoice Posting.ClearBuffers">
+            <summary>
+            Clear temporary posting buffers in invoice posting codeunit
+            </summary>
+        </member>
+        <member name="M:.Invoice Posting.CheckCreditLine(Variant,Variant)">
+            <summary>
+            Check credit limit for document customer
+            </summary>
+        </member>
+        <member name="M:.Invoice Posting.SetHideProgressWindow(Boolean)">
+            <summary>
+            Set HideProgressWindow variable inside the invoice posting codeunit
+            </summary>
+        </member>
+        <member name="M:.Invoice Posting.SetParameters(Invoice Posting Parameters)">
+            <summary>
+            Set posting related parameters using temporary table
+            </summary>
+        </member>
+        <member name="M:.Invoice Posting.SetPreviewMode(Boolean)">
+            <summary>
+            Set PreviewMode variable inside the invoice posting codeunit
+            </summary>
+        </member>
+        <member name="M:.Invoice Posting.SetSuppressCommit(Boolean)">
+            <summary>
+            Set SupressCommit variable inside the invoice posting codeunit
+            </summary>
+        </member>
+        <member name="M:.Invoice Posting.SetTotalLines(Variant,Variant)">
+            <summary>
+            Set SupressCommit variable inside the invoice posting codeunit
+            </summary>
+        </member>
+        <member name="M:.Invoice Posting.PrepareLine(Variant,Variant,Variant)">
+            <summary>
+            Prepare invoice posting buffer line from source document line
+            </summary>
+        </member>
+        <member name="M:.Invoice Posting.PrepareJobLine(Variant,Variant,Variant)">
+            <summary>
+            Prepare invoice posting buffer line from source document job line
+            </summary>
+        </member>
+        <member name="M:.Invoice Posting.PostLedgerEntry(Variant,Codeunit::Gen# Jnl#-Post Line@)">
+            <summary>
+            Process customer or vendor ledger entry.
+            </summary>
+        </member>
+        <member name="M:.Invoice Posting.PostBalancingEntry(Variant,Codeunit::Gen# Jnl#-Post Line@)">
+            <summary>
+            Process customer or vendor ledger entry.
+            </summary>
+        </member>
+        <member name="M:.Invoice Posting.PostLines(Variant,Codeunit::Gen# Jnl#-Post Line@,Dialog@,Decimal@)">
+            <summary>
+            Process invoice posting buffer and post ledger entries for each record.
+            </summary>
+        </member>
+        <member name="M:.Invoice Posting.CalcDeferralAmounts(Variant,Variant,Decimal)">
+            <summary>
+            Calculate deferral amounts for invoice posting buffer
+            </summary>
+        </member>
+        <member name="M:.Invoice Posting.CreatePostedDeferralSchedule(Variant,Integer,Code[20],Integer,Date)">
+            <summary>
+            Create deferral schedule for posted documents
+            </summary>
+        </member>
+    </members>
+</doc>
